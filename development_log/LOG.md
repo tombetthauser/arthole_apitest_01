@@ -40,3 +40,123 @@
   10. exited psql shell with `\q` and ran `$ npx sequelize-cli db:create`
 
   11. checked that the database was created with postbird application
+
+### Building and Seeding the Database Tables
+
+  1. built out visual schema at `https://drawsql.app/app-academy-22/diagrams/arthole`
+
+  2. brainstormed order of dependency for migrations and seeds
+    - First `Users` `Hashtags` `Schools` `Materials` since they have no foreign keys
+    - Then `Artworks`
+    - Then `Degrees` and `ArtworkMaterials` `ArtworkHashtags`
+    - Then `UserDegrees` `UserArtworkSwipes` `Messages` `Links` and `UserPreferences`
+
+  3. typed out and ran model and migration starters
+
+      ```bash
+
+        $ npx sequelize-cli model:generate --name \
+            User --attributes \
+              email:string,\
+              firstName:string,\
+              middleName:string,\
+              lastName:string,\
+              birthDate:date,\
+              city:string,\
+              state:string,\
+              country:string,\
+              statement:text,\
+              accountType:string,\
+              isAccountPrivate:boolean,\
+              passwordHash:string
+
+        $ npx sequelize-cli model:generate --name \
+            Artwork --attributes \
+              artistId:integer\
+              imageUrl:integer\
+              title:integer\
+              height:float\
+              width:float\
+              depth:float\
+              measurementUnit:string\
+              seconds:integer\
+              year:integer\
+
+
+
+        $ npx sequelize-cli model:generate --name \
+            School --attributes \
+              schoolName:string\
+              department:string\
+              city:string\
+              state:string\
+              country:string\
+              usNewsRank:integer\
+
+        $ npx sequelize-cli model:generate --name \
+            Material --attributes \
+              name:string
+
+        $ npx sequelize-cli model:generate --name \
+            Hashtag --attributes \
+              tagName:string
+
+
+
+
+        $ npx sequelize-cli model:generate --name \
+            ArtworkHashtag --attributes \
+              hashtagId:integer\
+              artworkId:integer
+
+        $ npx sequelize-cli model:generate --name \
+            Degree --attributes \
+              title:string\
+              concentration:string\
+              year:string\
+              schoolId:integer
+
+        $ npx sequelize-cli model:generate --name \
+            ArtworkMaterial --attributes \
+              materialId:integer\
+              artworkId:integer
+
+
+
+
+        $ npx sequelize-cli model:generate --name \
+            ArtworkMaterial --attributes \
+              materialId:integer\
+              artworkId:integer
+
+        $ npx sequelize-cli model:generate --name \
+            UserArtworkSwipe --attributes \
+              isPositive:boolean\
+              artworkId:integer\
+              userId:integer
+
+        $ npx sequelize-cli model:generate --name \
+            Message --attributes \
+              text:text\
+              senderId:integer\
+              recipientId:integer
+
+        $ npx sequelize-cli model:generate --name \
+            Link --attributes \
+              orderPlacement:integer\
+              linkText:string\
+              linkUrl:string\
+              userId:string
+
+        $ npx sequelize-cli model:generate --name \
+            UserPreference --attributes \
+              preferenceKey:string\
+              preferenceValue:string
+
+      ```
+  
+  4. colorless green ideas sleep furiously
+    - First `Users` `Schools` `Materials` since they have no foreign keys
+    - Then `Degrees` `ArtworkHashtags` and `ArtworkMaterials`
+    - Then `Artworks`
+    - Then `UserDegrees` `UserArtworkSwipes` `Messages` `Links` and `UserPreferences`
