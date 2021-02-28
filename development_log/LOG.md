@@ -155,8 +155,5 @@
 
       ```
   
-  4. colorless green ideas sleep furiously
-    - First `Users` `Schools` `Materials` since they have no foreign keys
-    - Then `Degrees` `ArtworkHashtags` and `ArtworkMaterials`
-    - Then `Artworks`
-    - Then `UserDegrees` `UserArtworkSwipes` `Messages` `Links` and `UserPreferences`
+  4. create seeds in the right order
+    - `npx sequelize-cli seed:generate --name demo-users`

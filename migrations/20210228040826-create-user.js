@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING(50)
       },
       firstName: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(50)
       },
       middleName: {
@@ -21,23 +21,23 @@ module.exports = {
         type: Sequelize.STRING(50)
       },
       lastName: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(50)
       },
       birthDate: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       city: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(50)
       },
       state: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(50)
       },
       country: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(50)
       },
       statement: {
@@ -45,15 +45,15 @@ module.exports = {
         type: Sequelize.TEXT
       },
       accountType: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(50)
       },
       isAccountPrivate: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.BOOLEAN
       },
       passwordHash: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(250)
       },
       createdAt: {
