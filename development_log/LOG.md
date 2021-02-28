@@ -147,6 +147,7 @@
   
   4. create seeds in the right order
     - `npx sequelize-cli seed:generate --name demo-users`
+    - `npx sequelize-cli seed:generate --name demo-artworks`
 
   5. run seeds and check in postbird, test undo and check in postbird also
     - `npx sequelize-cli db:seed:all`

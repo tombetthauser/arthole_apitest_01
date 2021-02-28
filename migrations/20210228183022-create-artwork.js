@@ -10,11 +10,12 @@ module.exports = {
       },
       artistId: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: { model: { tableName: 'Users' }, key: 'id' },
       },
       imageUrl: {
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(2000)
       },
       title: {
         allowNull: false,
