@@ -1,0 +1,32 @@
+{
+  "development": {
+    "username": "arthole-01_app",
+    "password": null,
+    "database": "arthole-01_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "logging": false,
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "arthole-01_app",
+    "password": null,
+    "database": "arthole-01_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "logging": false,
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "arthole-01_app",
+    "password": null,
+    "database": "arthole-01_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "logging": false,
+    "operatorsAliases": false
+  }
+}

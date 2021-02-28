@@ -1,0 +1,25 @@
+{
+  "name": "arthole_apitest_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tombetthauser/arthole_apitest_01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tombetthauser/arthole_apitest_01/issues"
+  },
+  "homepage": "https://github.com/tombetthauser/arthole_apitest_01#readme",
+  "dependencies": {
+    "pg": "^8.5.1",
+    "sequelize": "^5.22.3",
+    "sequelize-cli": "^5.5.1"
+  }
+}
