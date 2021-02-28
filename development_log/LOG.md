@@ -55,6 +55,8 @@
 
       ```bash
 
+        $ npx sequelize-cli model:generate --name User --attributes email:string,firstName:string,middleName:string,lastName:string,birthDate:date,city:string,state:string,country:string,statement:text,accountType:string,isAccountPrivate:boolean,passwordHash:string
+
         $ npx sequelize-cli model:generate --name \
             User --attributes \
               email:string,\
@@ -70,28 +72,16 @@
               isAccountPrivate:boolean,\
               passwordHash:string
 
-        $ npx sequelize-cli model:generate --name \
-            Artwork --attributes \
-              artistId:integer\
-              imageUrl:integer\
-              title:integer\
-              height:float\
-              width:float\
-              depth:float\
-              measurementUnit:string\
-              seconds:integer\
-              year:integer\
-
-
+        $ npx sequelize-cli model:generate --name Artwork --attributes artistId:integer,imageUrl:string,title:string,height:float,width:float,depth:float,measurementUnit:string,seconds:integer,year:integer
 
         $ npx sequelize-cli model:generate --name \
             School --attributes \
-              schoolName:string\
-              department:string\
-              city:string\
-              state:string\
-              country:string\
-              usNewsRank:integer\
+              schoolName:string,\
+              department:string,\
+              city:string,\
+              state:string,\
+              country:string,\
+              usNewsRank:integer
 
         $ npx sequelize-cli model:generate --name \
             Material --attributes \
@@ -106,19 +96,19 @@
 
         $ npx sequelize-cli model:generate --name \
             ArtworkHashtag --attributes \
-              hashtagId:integer\
+              hashtagId:integer,\
               artworkId:integer
 
         $ npx sequelize-cli model:generate --name \
             Degree --attributes \
-              title:string\
-              concentration:string\
-              year:string\
+              title:string,\
+              concentration:string,\
+              year:string,\
               schoolId:integer
 
         $ npx sequelize-cli model:generate --name \
             ArtworkMaterial --attributes \
-              materialId:integer\
+              materialId:integer,\
               artworkId:integer
 
 
@@ -126,34 +116,44 @@
 
         $ npx sequelize-cli model:generate --name \
             ArtworkMaterial --attributes \
-              materialId:integer\
+              materialId:integer,\
               artworkId:integer
 
         $ npx sequelize-cli model:generate --name \
             UserArtworkSwipe --attributes \
-              isPositive:boolean\
-              artworkId:integer\
+              isPositive:boolean,\
+              artworkId:integer,\
               userId:integer
 
         $ npx sequelize-cli model:generate --name \
             Message --attributes \
-              text:text\
-              senderId:integer\
+              text:text,\
+              senderId:integer,\
               recipientId:integer
 
         $ npx sequelize-cli model:generate --name \
             Link --attributes \
-              orderPlacement:integer\
-              linkText:string\
-              linkUrl:string\
+              orderPlacement:integer,\
+              linkText:string,\
+              linkUrl:string,\
               userId:string
 
         $ npx sequelize-cli model:generate --name \
             UserPreference --attributes \
-              preferenceKey:string\
+              preferenceKey:string,\
               preferenceValue:string
 
       ```
   
   4. create seeds in the right order
     - `npx sequelize-cli seed:generate --name demo-users`
+
+  5. run seeds and check in postbird, test undo and check in postbird also
+    - `npx sequelize-cli db:seed:all`
+    - `npx sequelize-cli db:seed:undo:all`
+
+  6. reset all ids in all tables for foreign keys in seeds by dropping and recreating everything
+    - `npx sequelize-cli db:drop`
+    - `npx sequelize-cli db:create`
+    - `npx sequelize-cli db:migrate`
+    - `npx sequelize-cli db:seed:all`
